@@ -29,6 +29,8 @@ public class MainBotService extends TelegramLongPollingBot {
             log.log(Level.INFO, "Phone number is {0}, chat id is {1}", new Object[]{phoneNumber, chatId});
         }
         switch (text) {
+
+
             case "/start" -> {
                 sendMessage.setText("Salom, botga xush kelibsiz!");
                 ReplyKeyboardMarkup markup =new ReplyKeyboardMarkup();
