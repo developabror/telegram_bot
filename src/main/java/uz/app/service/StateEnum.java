@@ -4,5 +4,6 @@ public enum StateEnum {
     ADD_MENU,
     WRITE_TO_ADMIN,
     DEF,
-    RESPOND_TO_USER;
+    RESPOND_TO_USER,
+    SEND_PHOTO;
 }

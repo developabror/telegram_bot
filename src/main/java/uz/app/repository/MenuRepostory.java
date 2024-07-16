@@ -3,8 +3,7 @@ package uz.app.repository;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import lombok.Cleanup;
-import lombok.SneakyThrows;
+import uz.app.entity.User;
 
 import java.io.*;
 import java.lang.reflect.Type;
@@ -42,6 +41,7 @@ static {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
+
+
 }

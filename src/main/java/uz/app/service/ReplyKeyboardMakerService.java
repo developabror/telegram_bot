@@ -26,6 +26,7 @@ public class ReplyKeyboardMakerService {
         }
         return markup;
     }
+
     public ReplyKeyboardMarkup replyMaker(String[][] buttons) {
         ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
         markup.setResizeKeyboard(true);
@@ -37,14 +38,17 @@ public class ReplyKeyboardMakerService {
             KeyboardRow row = new KeyboardRow();
             keyboardRows.add(row);
             for (String s : button) {
-                row.add(s);
+                if (s.equals("contact")) {
+                    row.add(KeyboardButton.builder().text(s).requestContact(true).build());
+                } else
+                    row.add(s);
             }
         }
         return markup;
     }
 
     public ReplyKeyboardMarkup replyMaker(List<String> buttons) {
-        if (!buttons.get(buttons.size()-1).equals("back")) {
+        if (!buttons.get(buttons.size() - 1).equals("back")) {
             buttons.add("back");
         }
         ReplyKeyboardMarkup markup = new ReplyKeyboardMarkup();
@@ -54,13 +58,16 @@ public class ReplyKeyboardMakerService {
         markup.setKeyboard(keyboardRows);
         KeyboardRow row = new KeyboardRow();
         for (int i = 0; i < buttons.size(); i++) {
-            row.add(buttons.get(i));
+            if (buttons.get(i).equals("contact")) {
+                row.add(KeyboardButton.builder().text(buttons.get(i)).requestContact(true).build());
+            } else
+                row.add(buttons.get(i));
             if (i % 2 == 1) {
                 keyboardRows.add(row);
                 row = new KeyboardRow();
             }
         }
-        if (buttons.size()%2==1) keyboardRows.add(row);
+        if (buttons.size() % 2 == 1) keyboardRows.add(row);
         return markup;
     }
 

@@ -9,8 +9,9 @@ public interface Utill {
     KeyboardButton contactRequest = KeyboardButton.builder().text("send contact").requestContact(true).build();
     KeyboardButton locationRequest = KeyboardButton.builder().text("send location").requestContact(true).build();
     String mainMenu[][] = {
-            {"menu"},
-            {"contact us", "location request"}
+            {"menu","send photo"},
+            {"contact us", "location request"},
+            {"contact"},
     };
     String menu[][] = {
             {"burger", "lavash"},
