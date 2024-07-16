@@ -5,11 +5,12 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 public interface Utill {
     String botToken = "7468325908:AAEHcl6fV-gzG_JrEAxL7No08LH4tJJDQzU";
     String botUsername = "g44testbot";
+    String[] adminChatId = {"702192115","6198873386"};
     KeyboardButton contactRequest = KeyboardButton.builder().text("send contact").requestContact(true).build();
     KeyboardButton locationRequest = KeyboardButton.builder().text("send location").requestContact(true).build();
     String mainMenu[][] = {
             {"menu"},
-            {"contact request", "location request"}
+            {"contact us", "location request"}
     };
     String menu[][] = {
             {"burger", "lavash"},
